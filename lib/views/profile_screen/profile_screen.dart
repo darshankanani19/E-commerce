@@ -2,6 +2,7 @@ import 'package:ecommerce/consts/consts.dart';
 import 'package:ecommerce/consts/lists.dart';
 import 'package:ecommerce/controllers/auth_controller.dart';
 import 'package:ecommerce/views/auth_screen/login_screen.dart';
+import 'package:ecommerce/views/profile_screen/edit_profile_screen.dart';
 import 'package:ecommerce/widgets_common/bg_widget.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           // edit button session
           Align(
               alignment: Alignment.topRight,
-              child: Icon(Icons.edit,color: whiteColor,)),
+              child: Icon(Icons.edit,color: whiteColor,).onTap(()=>Get.to(EditProfileScreen()))),
           // profile details session
           Padding(
             padding: const EdgeInsets.all(8.0),
