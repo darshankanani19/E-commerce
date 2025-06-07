@@ -1,6 +1,7 @@
 import 'package:ecommerce/consts/consts.dart';
 import 'package:ecommerce/consts/lists.dart';
 import 'package:ecommerce/controllers/auth_controller.dart';
+import 'package:ecommerce/controllers/profile_controller.dart';
 import 'package:ecommerce/views/auth_screen/login_screen.dart';
 import 'package:ecommerce/views/profile_screen/edit_profile_screen.dart';
 import 'package:ecommerce/widgets_common/bg_widget.dart';
@@ -12,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(AuthController());
+    var controller = Get.put(ProfileController());
     return bgWidget(Scaffold(body: SafeArea(child: Container(padding: EdgeInsets.all(8),
       child: Column(
         children: [
@@ -43,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   onPressed: () async {
                     try{
-                      await controller.signOutMethod();
+                      await Get.put(AuthController()).signOutMethod();
                       VxToast.show(context, msg: loggedOut);
                       Get.offAll(()=>LoginScreen());
 
